@@ -1,92 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Scramble</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-    <style type="text/css">
-        p{
-            font-size: 24px;
-            font-family: Segoe-ui;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Text Slow</title>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<style type="text/css">
+		html .content span, body .content span {
+			width: 10px;
+			font-size: 18px;
+			display: inline-block;
+		}
+		html .content, body .content {
+			/*text-align: justify;*/
+			/*top: 50%;*/
+			position: relative;
+			
+		}
+	</style>
 </head>
-
 <body>
 
-    <p data-scrambler>
-       0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 
-   </p>
+	<div class="content">
+		<div class="random">
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>	
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+			<span class="nbr ltr">0</span>
+		</div>
+	</div>
 
-   <!-- <script src="./dist/scrambler.umd.js"></script> -->
-   <script>
-    ((Scrambler) => {
-            // utility fn to get a random character 
-            const randomChar = function () {
-                // return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 1);
-                return parseInt(Math.floor(Math.random() * 10));
-            }
-            // utility fn to get a random delay time 
-            const randomTime = function () {
-                return 11000 + (Math.random() * (1000 - 3000) + 3000);
-                // return 11000;
-            }
-            // get scrambler elements, reset btn, init blocker
-            const domEls = document.querySelectorAll('[data-scrambler]');
-            let prevent = false;
+	<script type="text/javascript">
 
-            // main fn
-            var scrambleFn = function () {
-                // for each scramble element
-                setInterval(() => {
-                    domEls.forEach(function (element, which) {
-                    let truth = element.textContent.split(''); // get letters
-                    let newLetters = element.textContent.split('');
-                    let revert = []; // init empty kill switch array		
+		$(document).ready(function() {
+			// setInterval(() => {
+				var $randomnbr = $('.nbr');
+				var $timer = 1;
+				var $it;
+				var $data = 0;
+				var index;
+				var change;
+				var letters = ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",, "0", "0", "0", "0", "0", "0",];
 
-                    const ticker = setInterval(function () {
-                        // map over letters and replace with random or revert back to truth
-                        truth.map((letter, i) => {
-                            // break if a space
-                            if (' \t\n\r\v'.indexOf(letter) > -1) return;
-                            // set new random letter
-                            newLetters[i] = randomChar();
-                            // set random timeout to make letters reset at different times
-                            setTimeout(function () {
-                                revert[i] = true;
-                            }, randomTime());
-                            // reset individual letter if kill switch
-                            if (revert[i] === true) {
-                                newLetters[i] = truth[i];
-                            };
-                            // set html
-                            element.textContent = newLetters.join('');
-                        });
-                    }, 400);
-                }); // end forEach
-                }, 4000);
-            }; // end main
-            scrambleFn();
+				$randomnbr.each(function() {
 
-            $(document).ready(function () {
-                setInterval(() => {
-                    // scrambleFn();
-                }, 3000);
-                //11000
-            });
+					change = Math.round(Math.random()*100);
+					$(this).attr('data-change', change);
 
-        })();
+				});
+
+				function random() {
+					return Math.round(Math.random()*9);
+				};
+
+				function select() {
+					return Math.round(Math.random()*$randomnbr.length+1);
+				};
+
+				function value() {
+					$('.nbr:nth-child('+select()+')').html(''+random()+'');
+					$('.nbr:nth-child('+select()+')').attr('data-number', $data);
+					$data++;
+
+					$randomnbr.each(function() {
+						if(parseInt($(this).attr('data-number')) > parseInt($(this).attr('data-change'))) {
+							index = $('.ltr').index(this);
+							$(this).html(letters[index]);
+							$(this).removeClass('nbr');
+						}
+					});
+				};
 
 
-    </script>
+				setInterval(() =>{
+					$it = setInterval(value(), $timer);
+				},100)
+
+				
+			// }, 10000);
+		});
+
+	</script>
+
 </body>
-
 </html>
