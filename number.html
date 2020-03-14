@@ -1,79 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+	<title>Buy</title>
 </head>
 <body>
+	<h2>Ini test</h2>
+	<form action="https://www.coinpayments.net/index.php" method="post">
+	<input type="hidden" name="cmd" value="_pay">
+	<input type="hidden" name="reset" value="1">
+	<input type="hidden" name="merchant" value="7509dff41c8e727d58856b6132750698">
+	<input type="hidden" name="item_name" value="itemname">
+	<input type="hidden" name="currency" value="USD">
+	<input type="hidden" name="amountf" value="10.00000000">
+	<input type="hidden" name="quantity" value="1">
+	<input type="hidden" name="allow_quantity" value="0">
+	<input type="hidden" name="want_shipping" value="1">
+	<input type="hidden" name="allow_extra" value="1">
+	<input type="image" src="https://www.coinpayments.net/images/pub/buynow-grey.png" alt="Buy Now with CoinPayments.net">
+</form>
 
-  <script> 
-    document.onreadystatechange = function() { 
-        if (document.readyState !== "complete") { 
-            document.querySelector( 
-              "body").style.visibility = "hidden"; 
-            document.querySelector( 
-              "#loader").style.visibility = "visible"; 
-        } else { 
-            document.querySelector( 
-              "#loader").style.display = "none"; 
-            document.querySelector( 
-              "body").style.visibility = "visible"; 
-        } 
-    }; 
-</script> 
 
-  <div class="middle" id="loader">
-    <div class="bar bar1"></div>
-    <div class="bar bar2"></div>
-    <div class="bar bar3"></div>
-    <div class="bar bar4"></div>
-    <div class="bar bar5"></div>
-    <div class="bar bar6"></div>
-    <div class="bar bar7"></div>
-    <div class="bar bar8"></div>
-  </div>
-  
-  <div class="content">
-    <div class="counting-sec">
-      <div class="inner-width">
-        <div class="col">
-          <i class="far fa-smile-wink"></i>
-          <div class="num">1246</div>
-          Speakers
-        </div>
-        
-        <div class="col">
-          <i class="fas fa-briefcase"></i>
-          <div class="num">19</div>
-          Services
-        </div>
-        
-        <div class="col">
-          <i class="far fa-money-bill-alt"></i>
-          <div class="num">687</div>
-          Sells
-        </div>
-        
-        <div class="col">
-          <i class="far fa-object-group"></i>
-          <div class="num">87</div>
-          Templates
-        </div>
-      </div>
-    </div>
-  </div>
+	
 
-  
-  
-  
-  <script type="text/javascript">
-    $(".num").counterUp({delay:10,time:1000});
-  </script>
-  
+
 </body>
 </html>
